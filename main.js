@@ -15,3 +15,16 @@ const handleMove = e => {
 // when mouse/touch moves, call handleMove 
 document.onmousemove = e => handleMove(e);
 document.ontouchmove = e => handleMove(e.touches[0]);
+
+// change the text of the GitHub button when the mouse hovers over it
+ml_butt = document.getElementsByClassName("meta-link")[0]
+gh_text = document.getElementsByClassName("roboto-mono")[0]
+
+// .onhover doesn't exist ... so we use .onmouseover and .onmouseout
+ml_butt.onmouseover = function() {
+    gh_text.innerHTML = 'github';
+}
+
+ml_butt.onmouseout = function() {
+    gh_text.innerHTML = 'GitHub';
+}
